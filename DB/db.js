@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 function dbConnect() {
-    const url = 'mongodb://localhost/taskmanger'
+    const url = 'mongodb://localhost/ideaDB'
 
     mongoose.connect(url, {
         useNewUrlParser: true,
