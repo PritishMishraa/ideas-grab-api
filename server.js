@@ -137,9 +137,9 @@ app.use('/search', (req, res, next) => {
     if (!req.query.searchText) {
         let redirectUrl = req.baseUrl;
         if (redirectUrl.includes("?")) {
-            redirectUrl += "&searchText=car";
+            redirectUrl += "&searchText=phone";
         } else {
-            redirectUrl += "?searchText=car";
+            redirectUrl += "?searchText=phone";
         }
         res.redirect(redirectUrl);
     } else {
@@ -148,7 +148,7 @@ app.use('/search', (req, res, next) => {
 })
 // get route for search the text
 app.get('/search', async (req, res) => {
-    let { page = 1, limit = 10, searchText } = req.query
+    let { page = 1, limit = 10, searchText = phone } = req.query
 
     let totalIdeas = await Idea.find({ $text: { $search: searchText } })
     // getting limited ideas from the collection where the search string matches 
