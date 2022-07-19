@@ -1,4 +1,4 @@
-export default function MetaData(page, limit, totalCount) {
+export default function MetaData(ideas, page, limit, totalCount) {
     const currentPage = parseInt(page)
 
     const totalPage = Math.ceil(totalCount / limit)
@@ -10,5 +10,5 @@ export default function MetaData(page, limit, totalCount) {
         lastItemIndex = totalCount;
     }
 
-    return { currentPage, totalPage, lastItemIndex }
+    return { count: ideas.length, currentPage, totalPage, totalCount, lastItemIndex }
 }

@@ -8,7 +8,7 @@ export default async function getIdeas(req, res) {
         const ideas = await Idea.find().limit(limit * 1).skip((page - 1) * limit)
         const totalCount = await Idea.countDocuments()
 
-        const metaData = MetaData(page, limit, totalCount, ideas)
+        const metaData = MetaData(ideas, page, limit, totalCount, ideas)
 
         if (metaData.currentPage > metaData.totalPage) {
             return res.send({ caution: "flip back a little🚧" })
