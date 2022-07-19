@@ -1,22 +1,41 @@
 {
   "name": "ideas-grab-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+  "description": "API is built on the famous website IdeasGrab by David Delahunty. It is a collection of more than 3,600 project ideas to inspire you to create.",
+  "homepage": "https://github.com/PritishMishraa/ideas-grab-api",
+  "repository": {
+    "url": "https://github.com/PritishMishraa/ideas-grab-api"
   },
-  "keywords": [],
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/PritishMishraa/ideas-grab-api/issues"
+  },
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongoose",
+    "RESTful",
+    "rest-api"
+  ],
+  "author": "Pritish Mishra",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.4.4"
+    "mongoose": "^6.4.4",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": ">=16.0",
+    "npm": ">=8.0"
   }
 }

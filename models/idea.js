@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
@@ -10,7 +10,7 @@ const ideaSchema = new Schema({
 
 ideaSchema.index({ idea: 'text' })
 
-ideaSchema.statics.random = function (callback) {
+ideaSchema.statics.randomIdea = function (callback) {
     this.count(function (err, count) {
         if (err) {
             return callback(err);
@@ -21,7 +21,7 @@ ideaSchema.statics.random = function (callback) {
 };
 
 
-ideaSchema.statics.randomBatch = function (limit, callback) {
+ideaSchema.statics.randomIdeas = function (limit, callback) {
     this.count(function (err, count) {
         if (err) {
             return callback(err);
@@ -33,4 +33,4 @@ ideaSchema.statics.randomBatch = function (limit, callback) {
 
 const Idea = mongoose.model('Idea', ideaSchema)
 
-module.exports = Idea
+export default Idea
