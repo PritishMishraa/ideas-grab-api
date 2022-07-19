@@ -10,7 +10,7 @@ app.use(cors())
 
 /** Favicon */
 const __dirname = path.resolve();
-app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Redirect the root URL to the github repository
 app.get('/', (_req, res) => {
