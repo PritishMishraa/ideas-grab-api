@@ -54,8 +54,8 @@ app.use('/randomBatch', (req, res, next) => {
 app.get('/randomBatch', (req, res) => {
     let { limit } = req.query
     const count = limit
-    Idea.randomBatch(limit, function (_err, idea) {
-        res.send({ count, idea });
+    Idea.randomBatch(limit, function (_err, ideas) {
+        res.send({ count, ideas });
     });
 })
 //------------------------------------------------
