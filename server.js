@@ -10,7 +10,6 @@ app.use(cors())
 
 /** Favicon */
 const __dirname = path.resolve();
-app.use(express.static(__dirname + 'public'));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Redirect the root URL to the github repository
