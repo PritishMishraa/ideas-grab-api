@@ -1,9 +1,11 @@
+var cors = require('cors')
 const express = require('express')
 const dbConnect = require('./DB/db')
 const Idea = require('./models/idea')
 
 dbConnect()
 const app = express()
+app.use(cors())
 
 //------------------------------------------------
 // get route for random idea
