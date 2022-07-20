@@ -1,7 +1,7 @@
 <h1 align="center"> ideas-grab-apis </h1>
 
 <p align="center">
-  <img src="./public/heading.png" />
+  <img src="./public/heading1.png" />
 </p>
 
 # About
