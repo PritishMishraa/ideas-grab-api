@@ -1,7 +1,9 @@
 import Idea from "../models/idea.js"
+import err404 from "../errors/err404.js"
+import errPagination from "../errors/errPagination.js"
 import MetaData from "./utils/searchTextMetaData.js"
 
-export default async function getSearchText(req, res) {
+export default async function getSearchText(req, res, next) {
     try {
         const { page, limit, searchText } = req.query
 
@@ -9,17 +11,21 @@ export default async function getSearchText(req, res) {
         const matchedIdeas = await Idea.find({ $text: { $search: searchText } }).limit(limit * 1).skip((page - 1) * limit)
 
         if (totalMatchedIdeas == 0) {
-            return res.status(404).json({ error: 'No Match Found' })
+            return next(err404)
         }
 
         const metaData = MetaData(page, limit, matchedIdeas, totalMatchedIdeas.length, searchText)
 
         if (metaData.currentPage > metaData.totalPage) {
-            return res.send({ caution: "flip back a little🚧" })
+            // return res.send({ caution: "flip back a little🚧" })
+            console.log('hello1')
+            return next(errPagination)
         }
+        console.log('hello2')
 
-        return res.status(200).json({ metaData, matchedIdeas })
-    } catch (error) {
-        return error
+        return res.status(200).json({ metaData, ideas: matchedIdeas })
+    } catch {
+        const error = new Error('Cannot GET Matched Items')
+        return next(error)
     }
 }

@@ -1,6 +1,6 @@
 import Idea from "../models/idea.js"
 
-export default function getRandomIdeas(req, res) {
+export default function getRandomIdeas(req, res, next) {
     try {
         const { limit = 10 } = req.query
         const count = limit
@@ -8,6 +8,7 @@ export default function getRandomIdeas(req, res) {
             res.status(200).json({ count, ideas });
         });
     } catch {
-        return error
+        const error = new Error('Cannot GET Random Ideas')
+        return next(error)
     }
 }

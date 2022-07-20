@@ -3,6 +3,8 @@ import path from 'path'
 import express from 'express'
 import routes from './routes.js'
 import favicon from 'serve-favicon'
+import err404 from './errors/err404.js'
+import error from './errors/errorHandler.js'
 
 /** The Express app */
 const app = express()
@@ -18,5 +20,9 @@ app.get('/', (_req, res) => {
 })
 
 app.use(routes)
+
+app.use((_req, _res, next) => next(err404))
+
+app.use(error)
 
 export default app
