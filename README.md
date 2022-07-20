@@ -4,17 +4,17 @@
   <img src="./public/heading.png" />
 </p>
 
-## About
+# About
 
-## Technologies
+# Technologies
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## API Reference 
+# API Reference 
 
-### Get random idea
+## Get random idea
 
 ```HTTP
 GET /random
@@ -42,7 +42,9 @@ Random Idea `>>` [try in browser](https://ideas-grab-api.herokuapp.com/random)
 GET /random
 ```
 
-### Get random ideas
+
+
+## Get random ideas
 
 ```HTTP
 GET /random-ideas
@@ -85,13 +87,14 @@ GET /random-ideas?limit=15
 ```
 
 
-### Get ideas
+
+## Get ideas
 
 ```HTTP
 GET /ideas
 ```
 
-Returns a list of all the ideas from the database (__paginated__)
+Returns a list of all the ideas from the database (_paginated_)
 
 **Query parameters**
 
@@ -119,4 +122,73 @@ Returns a list of all the ideas from the database (__paginated__)
     },...
   ]
 }
+```
+
+**Example**
+
+Ideas `>>` [try in browser](https://ideas-grab-api.herokuapp.com/ideas)
+
+```HTTP
+GET /ideas
+```
+
+Ideas with a limit of 15 ideas on page 2 of 242 pages `>>` [try in browser](https://ideas-grab-api.herokuapp.com/ideas?page=2&limit=15)
+
+```HTTP
+GET /ideas?page=2&limit=15
+```
+
+
+
+## Get search text
+
+```HTTP
+GET /search
+```
+
+Returns a list of all the ideas from the database which includes the search text (_paginated_)
+
+**Query parameters**
+
+|    prams   	|   type   	|                  description                  	| default 	| max 	|
+|:----------:	|:--------:	|:---------------------------------------------:	|:-------:	|:---:	|
+|    limit   	|   `int`  	|       number of ideas returned per page       	|    10   	|  25 	|
+|    page    	|   `int`  	|                  page number                  	|    1    	|     	|
+| searchText 	| `string` 	| includes the ideas which contains search text 	| _phone_ 	|     	|
+                                                          
+
+**Response**
+
+```js
+{
+  metaData: {
+    matchedIdeas: number,
+    totalCount: number,
+    currentPage: number,
+    totalPage: number,
+    lastItemIndex: number,
+    searchText: string
+  },
+  ideas: [
+    {
+      _id: string,
+      idea: string
+    },...
+  ]
+}
+```
+
+
+**Example**
+
+Search `>>` [try in browser](https://ideas-grab-api.herokuapp.com/search)
+
+```HTTP
+GET /search
+```
+
+Search with a keyword _website_ and limit of 15 ideas on page 2 of 8 pages `>>` [try in browser](https://ideas-grab-api.herokuapp.com/search?searchText=website&page=2&limit=15)
+
+```HTTP
+GET /search?searchText=website&page=2&limit=15
 ```
