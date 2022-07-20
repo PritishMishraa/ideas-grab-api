@@ -17,11 +17,8 @@ export default async function getSearchText(req, res, next) {
         const metaData = MetaData(page, limit, matchedIdeas, totalMatchedIdeas.length, searchText)
 
         if (metaData.currentPage > metaData.totalPage) {
-            // return res.send({ caution: "flip back a little🚧" })
-            console.log('hello1')
             return next(errPagination)
         }
-        console.log('hello2')
 
         return res.status(200).json({ metaData, ideas: matchedIdeas })
     } catch {

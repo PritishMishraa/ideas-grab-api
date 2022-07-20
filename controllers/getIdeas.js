@@ -1,6 +1,6 @@
 import Idea from "../models/idea.js"
-import errorPagination from "../errors/errPagination.js"
 import MetaData from "./utils/ideasMetaData.js"
+import errorPagination from "../errors/errPagination.js"
 
 export default async function getIdeas(req, res, next) {
     try {
@@ -12,7 +12,6 @@ export default async function getIdeas(req, res, next) {
         const metaData = MetaData(ideas, page, limit, totalCount, ideas)
 
         if (metaData.currentPage > metaData.totalPage) {
-            // return res.send({ caution: "flip back a little🚧" })
             return next(errorPagination)
         }
 
