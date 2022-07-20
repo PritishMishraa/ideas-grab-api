@@ -15,6 +15,14 @@
 
 # API Reference 
 
+## Endpoints
+- [Get random idea](#get-random-idea)
+- [Get random ideas](#get-random-ideas)
+- [Get ideas](#get-ideas)
+- [Get search text](#get-search-text)
+
+<br>
+
 ## Get random idea
 
 ```HTTP
