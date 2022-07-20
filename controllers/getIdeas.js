@@ -4,7 +4,7 @@ import errorPagination from "../errors/errPagination.js"
 
 export default async function getIdeas(req, res, next) {
     try {
-        const { page = 1, limit = 10 } = req.query
+        const { page, limit } = req.query
 
         const ideas = await Idea.find().limit(limit * 1).skip((page - 1) * limit)
         const totalCount = await Idea.countDocuments()
