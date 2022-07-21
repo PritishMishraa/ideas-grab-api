@@ -157,7 +157,7 @@ Ideas `>>` <a href="https://ideas-grab-api.herokuapp.com/ideas" target="_blank">
 GET /ideas
 ```
 
-Ideas with a limit of 15 ideas on page 2 of 242 pages `>>` <a href="https://ideas-grab-api.herokuapp.com/random-ideas?page=2&limit=15" target="_blank">try in browser</a>
+Ideas with a limit of 15 ideas on page 2 of 242 pages `>>` <a href="https://ideas-grab-api.herokuapp.com/ideas?page=2&limit=15" target="_blank">try in browser</a>
 
 ```HTTP
 GET /ideas?page=2&limit=15
