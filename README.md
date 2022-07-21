@@ -48,7 +48,7 @@ Returns a single random idea from the database
 
 **Example**
 
-Random Idea `>>` [try in browser](https://ideas-grab-api.herokuapp.com/random)
+Random Idea `>>` <a href="https://ideas-grab-api.herokuapp.com/random" target="_blank">try in browser</a>
 
 ```HTTP
 GET /random
@@ -93,13 +93,13 @@ Returns a list of random ideas from the database
 
 **Example**
 
-Random Ideas `>>` [try in browser](https://ideas-grab-api.herokuapp.com/random-ideas)
+Random Ideas `>>` <a href="https://ideas-grab-api.herokuapp.com/random-ideas" target="_blank">try in browser</a>
 
 ```HTTP
 GET /random-ideas
 ```
 
-Random Ideas with a limit of 15 ideas `>>` [try in browser](https://ideas-grab-api.herokuapp.com/random-ideas?limit=15)
+Random Ideas with a limit of 15 ideas `>>` <a href="https://ideas-grab-api.herokuapp.com/random-ideas?limit=15" target="_blank">try in browser</a>
 
 ```HTTP
 GET /random-ideas?limit=15
@@ -151,13 +151,13 @@ Returns a list of all the ideas from the database (_paginated_)
 
 **Example**
 
-Ideas `>>` [try in browser](https://ideas-grab-api.herokuapp.com/ideas)
+Ideas `>>` <a href="https://ideas-grab-api.herokuapp.com/ideas" target="_blank">try in browser</a>
 
 ```HTTP
 GET /ideas
 ```
 
-Ideas with a limit of 15 ideas on page 2 of 242 pages `>>` [try in browser](https://ideas-grab-api.herokuapp.com/ideas?page=2&limit=15)
+Ideas with a limit of 15 ideas on page 2 of 242 pages `>>` <a href="https://ideas-grab-api.herokuapp.com/random-ideas?page=2&limit=15" target="_blank">try in browser</a>
 
 ```HTTP
 GET /ideas?page=2&limit=15
@@ -211,13 +211,13 @@ Returns a list of all the ideas from the database which includes the search text
 
 **Example**
 
-Search `>>` [try in browser](https://ideas-grab-api.herokuapp.com/search)
+Search `>>` <a href="https://ideas-grab-api.herokuapp.com/search" target="_blank">try in browser</a>
 
 ```HTTP
 GET /search
 ```
 
-Search with a keyword _website_ and limit of 15 ideas on page 2 of 8 pages `>>` [try in browser](https://ideas-grab-api.herokuapp.com/search?searchText=website&page=2&limit=15)
+Search with a keyword _website_ and limit of 15 ideas on page 2 of 8 pages `>>` <a href="https://ideas-grab-api.herokuapp.com/search?searchText=website&page=2&limit=15" target="_blank">try in browser</a>
 
 ```HTTP
 GET /search?searchText=website&page=2&limit=15
