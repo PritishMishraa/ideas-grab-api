@@ -1,4 +1,6 @@
-<h1 align="center"> ideas-grab-api</h1>
+# ![Status](https://img.shields.io/badge/status-migrating-red)
+
+<h1 align="center"> ideas-grab-api </h1>
 
 <p align="center">
   <img src="./public/heading1.png" />
